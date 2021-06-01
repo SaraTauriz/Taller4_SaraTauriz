@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taller4_Ejercicio1</title>
+
+</head>
+
+<body>
+    <label><i>Selecciona una operación</i></label>
+
+    <select id="Select" class = "Select">
+        <option selected></option>
+        <option value = "1"> Ingrese un valor numérico al usuario en base octal (8) </option>
+        
+    </select>
+
+    <button type="button" onclick="metodo()">Mostrar</button>
+
+
+    <div id= "caso1" style="display : none;" class = "contenedor">    
+        Ingrese número de base octal <input id="octal" >
+        <hr>
+        <button id="button" onclick="Mostrareq()">Mostar base 10</button>
+    </div>
+
+    
+    <p id="resultado"></p>
+
+</body>
+</html>
+
+
+<script type = "text/javascript">
+
+    function metodo()
+    {
+        var i= document.getElementById("Select").value;
+        document.getElementById("resultado").innerHTML = "";
+    
+        switch(parseInt(i))
+        {
+            case 1:
+            document.getElementById("caso1").style = "display: block;"
+            document.getElementById("caso2").style = "display: none;"
+            break;
+    
+        }
+    }
+
+    function Mostrareq()
+    {
+        var Noctal=0;
+        var numero = document.getElementById("octal").value;
+        var array = Array.from(numero);
+
+        for ( var i = 0; i < array.length; i++)
+        {
+            if(array[i]>7)
+            {
+                Noctal+=1;
+            }
+        }
+
+        if(Noctal > 0)
+        {
+            text = "Ingrese un número octal valido"
+        }
+        else
+        {
+            text = "El decimal del número octal ingresado es: " + parseInt(numero, 8);
+        }
+            
+        alert(text);
+    }
+
+    
+
+</script>
+
+<style>
+
+    body
+    {
+        text-align-last: center;
+        background-image: url(https://eskipaper.com/images/dark-plaid-wallpaper-1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        
+    }
+
+    h1
+    {
+        text-align-last: center;
+        color: #f3f3f3;
+        font-size: 50px;
+    }
+
+    label
+    {
+        text-align-last: center;
+        color: #f3f3f3;
+        font-size: 30px;
+    }
+
+    option
+    {
+        text-align-last: center;
+        color: #0e0e0f;
+        font-size: 15px;
+    }
+    
+    .Select
+    {
+        text-align-last: center;
+        background: rgb(255, 255, 255);
+        margin-top: 122.5px;
+        padding: 5px;
+    }
+
+    .contenedor
+    {
+        text-align-last: center;
+        background: rgb(65, 63, 59);
+        color: #ffffff;
+        margin-top: 30px;
+        padding: 5px;    
+        width: 30%;
+        padding: 15px;
+    }
+
+    p
+    {
+        text-align-last: center;
+        color: #ffffff;
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    div
+    {
+        text-align:center;
+        color: #0f0f0f;
+        font-size: 20px;
+        margin-top: 25px;
+        margin:20px auto;
+        border-radius: 1%;
+    
+    }
+
+
+
+</style>
+    

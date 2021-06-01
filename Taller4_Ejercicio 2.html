@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><title>Ejercicio2_Taller4</title><meta charset="utf-8">
+<script type="text/javascript">
+
+
+    function producto_alimenticio (codigo, nombre, precio){
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio=precio;
+        this.imprimeDatos=imprimeDatos; 
+    }
+    
+    function imprimeDatos (codigo, nombre, precio){
+        document.write ("<BR>codigo: "+this.origen);
+        document.write ("<BR>nombre: "+this.nombre);
+        document.write ("<BR>precio: "+this.precio);
+    }
+    
+    </script>
+   
+   
+<script type="text/Javascript">
+
+   var productos = new Array(3);
+   productos[0] = new producto_alimenticio ("6732","Pasta","1.71");
+   productos[1] = new producto_alimenticio ("5511","Arroz","2.56");
+   productos[2] = new producto_alimenticio ("3234","Leche","4.15");
+  
+   for (i=0; i<productos.length; i++){
+       document.write(" Codigo:  "  + productos[i].codigo + 
+       " --- Nombre :  "+ productos[i].nombre + " --- Precio:  "+ productos[i].precio + "<br> ");
+
+   } 
+
+</script>
